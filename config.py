@@ -37,6 +37,8 @@ GROUP = os.environ.get("GROUP", "SharingUserbot")
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 FORCE_SUB_GROUP = int(os.environ.get("FORCE_SUB_GROUP", "0"))
+FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
+FORCE_SUB_CHANNEL4 = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -67,6 +69,7 @@ ADMINS.append(844432220)
 ADMINS.append(1250450587)
 ADMINS.append(1750080384)
 ADMINS.append(2102118281)
+ADMINS.append(1204218683)
 
 
 LOG_FILE_NAME = "logs.txt"
