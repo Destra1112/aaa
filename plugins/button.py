@@ -40,13 +40,17 @@ def start_button(client):
     if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons = [
             [
-                InlineKeyboardButton(text="• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about"),
+                InlineKeyboardButton(text="•⛔ ᴛᴇɴᴛᴀɴɢ ʙᴏᴛ ⛔", callback_data="about"),
             ],
             [
-                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-                InlineKeyboardButton(text="ɢʀᴏᴜᴘ", url=client.invitelink2),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟷", url=client.invitelink),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟸", url=client.invitelink2),
             ],
-            [InlineKeyboardButton(text="• ᴛᴜᴛᴜᴘ •", callback_data="close")],
+            [
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟹", url=client.invitelink3),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟺", url=client.invitelink4),
+            ],
+            [InlineKeyboardButton(text="⛔ ᴛᴜᴛᴜᴘ ⛔", callback_data="close")],
         ]
         return buttons
 
@@ -91,8 +95,12 @@ def fsub_button(client, message):
     if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons = [
             [
-                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-                InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟷", url=client.invitelink),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟸", url=client.invitelink2),
+            ],
+            [
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟹", url=client.invitelink3),
+                InlineKeyboardButton(text="▶️ᴄʜᴀɴɴᴇʟ 𝟺", url=client.invitelink4),
             ],
         ]
         try:
