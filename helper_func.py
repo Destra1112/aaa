@@ -10,8 +10,8 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 
-from config import ADMINS, FORCE_SUB_CHANNEL, FORCE_SUB_GROUP
-
+from config import ADMINS, FORCE_SUB_CHANNEL, FORCE_SUB_GROUP, FORCE_SUB_CHANNEL3, 
+FORCE_SUB_CHANNEL4
 
 async def subschannel(filter, client, update):
     if not FORCE_SUB_CHANNEL:
@@ -43,10 +43,45 @@ async def subsgroup(filter, client, update):
     return member.status in ["creator", "administrator", "member"]
 
 
+async def subschannel(filter, client, update):
+    if not FORCE_SUB_CHANNEL3:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(
+            chat_id=FORCE_SUB_CHANNEL3, user_id=user_id
+        )
+    except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
+
+
+async def subschannel(filter, client, update):
+    if not FORCE_SUB_CHANNEL4:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(
+            chat_id=FORCE_SUB_CHANNEL4, user_id=user_id
+        )
+    except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
+
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
         return True
     if not FORCE_SUB_GROUP:
+        return True
+    if not FORCE_SUB_CHANNEL3:
+        return True
+    if not FORCE_SUB_CHANNEL4:
         return True
     user_id = update.from_user.id
     if user_id in ADMINS:
