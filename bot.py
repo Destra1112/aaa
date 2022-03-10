@@ -13,6 +13,8 @@ from config import (
     CHANNEL_ID,
     FORCE_SUB_CHANNEL,
     FORCE_SUB_GROUP,
+    FORCE_SUB_CHANNEL3,
+    FORCE_SUB_CHANNEL4,
     LOGGER,
     OWNER,
     TG_BOT_TOKEN,
@@ -72,6 +74,44 @@ class Bot(Client):
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
+                )
+                sys.exit()
+        if FORCE_SUB_CHANNEL3:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL3)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL3)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL3)).invite_link
+                self.invitelink3 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    "❌Bot tidak dapat Mengambil link invite dari FORCE_SUB_CHANNEL3! ❌"
+                )
+                self.LOGGER(__name__).warning(
+                    f"Silakan periksa kembali var FORCE_SUB_CHANNEL3 dan Pastikan Bot anda Admin di Channel Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Channel Saat Ini: {FORCE_SUB_CHANNEL3}"
+                )
+                self.LOGGER(__name__).info(
+                    "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
+                )
+                sys.exit()
+       if FORCE_SUB_CHANNEL4:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL4)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL4)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL4)).invite_link
+                self.invitelink4 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    "❌Bot tidak dapat Mengambil link invite dari FORCE_SUB_CHANNEL4!❌"
+                )
+                self.LOGGER(__name__).warning(
+                    f"❌Silakan periksa kembali var FORCE_SUB_CHANNEL4 dan Pastikan Bot anda Admin di Channel Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Channel Saat Ini: {FORCE_SUB_CHANNEL4}❌"
+                )
+                self.LOGGER(__name__).info(
+                    "❌Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan❌"
                 )
                 sys.exit()
         try:
