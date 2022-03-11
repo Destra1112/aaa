@@ -10,8 +10,13 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 
-from config import ADMINS, FORCE_SUB_CHANNEL, FORCE_SUB_GROUP, FORCE_SUB_CHANNEL3, 
-FORCE_SUB_CHANNEL4
+from config import (
+            ADMINS,
+            FORCE_SUB_CHANNEL,
+            FORCE_SUB_GROUP,
+            FORCE_SUB_CHANNEL3,
+            FORCE_SUB_CHANNEL4,
+)
 
 async def subschannel(filter, client, update):
     if not FORCE_SUB_CHANNEL:
