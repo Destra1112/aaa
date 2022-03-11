@@ -95,7 +95,7 @@ class Bot(Client):
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
                 )
                 sys.exit()
-       if FORCE_SUB_CHANNEL4:
+        if FORCE_SUB_CHANNEL4:
             try:
                 link = (await self.get_chat(FORCE_SUB_CHANNEL4)).invite_link
                 if not link:
